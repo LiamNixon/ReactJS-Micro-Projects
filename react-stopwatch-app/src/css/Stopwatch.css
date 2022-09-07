@@ -1,0 +1,106 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+#stopwatchContainer {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(40,40,40);
+}
+
+#stopwatchWrapper {
+    position: relative;
+    top: 25%;
+    margin: auto;
+    max-width: 30vw;
+    height: 30vh;
+    gap: 0.5rem;
+    background-color: rgb(255,255,255);
+    border-radius: 1rem;
+}
+
+.colContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.rowContainer {
+    display: flex;
+    flex-direction: row;
+    flex: none;
+    gap: 0.25rem;
+}
+
+.toggleButton {
+    width: 4rem;
+    height: 4rem;
+
+    cursor: pointer;
+
+    border-radius: 100%;
+    background-color: rgb(245,245,245);
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(225,225,225);
+
+    transition: all 0.1s ease-in;
+}
+
+.toggleButton:hover {
+    background-color: rgb(220,220,220);
+    border-color: rgb(200,200,200);
+    box-shadow: 0px 0.2rem 0.75rem 0.01rem rgba(120,120,120, 0.3);
+}
+
+.resetButton {
+    width: 2rem;
+    height: 2rem;
+
+    cursor: pointer;
+
+    border-radius: 100%;
+    background-color: rgb(245,245,245);
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(225,225,225);
+
+    transition: all 0.1s ease-in;
+}
+
+.resetButton:hover {
+    background-color: rgb(220,220,220);
+    border-color: rgb(200,200,200);
+    box-shadow: 0px 0.2rem 0.75rem 0.01rem rgba(120,120,120, 0.3);
+}
+
+.valueLarge {
+    font-variant-numeric: tabular-nums;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 3rem;
+}
+
+.valueSmall {
+    font-variant-numeric: tabular-nums;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    align-self: center;
+}
+
+.divider {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 3rem;
+}
+
+.unitChars {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+}
