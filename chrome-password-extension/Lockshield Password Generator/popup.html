@@ -10,7 +10,7 @@
 <body>
     <div class="container">
         <div class="headerWrapper">
-            <span>Version: 0.0.2</span>
+            <span>Version: 0.1.1</span>
             <span>Lockshield Password Generator</span>
             <span id="settingsButton" class="material-icons">settings</span>
         </div>
@@ -18,7 +18,7 @@
             <div class="textWrapper">
                 <h1 id="passwordField">* * *</h1>
                 <button class="button" id="generateButton">Generate</button>
-                <button class="button" id="saveButton">Save</button>
+                <button class="button" id="saveButton">Copy</button>
             </div>
         </div>
         <div id="settingsPage">
@@ -26,20 +26,28 @@
                 <h2>Settings</h2>
                 <div class="settingsWrapper">
                     <div class="setting">
-                        <span>No. of characters:</span>
-                        <input class="textInput" type="number">
+                        <span># of characters:</span>
+                        <input id="lengthField" class="textInput" type="number">
                     </div>
                     <div class="setting">
                         <span>Upper and Lowercase?</span>
-                        <input type="checkbox">
+                        <input id="mixToggle" type="checkbox">
                     </div>
                     <div class="setting">
                         <span>Numbers?</span>
-                        <input type="checkbox">
+                        <input id="numberToggle" type="checkbox">
                     </div>
                     <div class="setting">
                         <span>Special Characters?</span>
-                        <input type="checkbox">
+                        <input id="specialToggle" type="checkbox">
+                    </div>
+                    <div class="setting">
+                        <span>No letters?</span>
+                        <input id="letterToggle" type="checkbox">
+                    </div>
+                    <div class="setting">
+                        <span>Create PIN?</span>
+                        <input id="pinToggle" type="checkbox">
                     </div>
                 </div>
             </div>
