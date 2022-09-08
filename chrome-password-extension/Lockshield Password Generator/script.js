@@ -131,6 +131,8 @@ const togglePIN = () => {
         specialToggle.checked = false;
         lettersToggle = false;
         letterToggle.checked = false;
+    } else {
+        lettersToggle = true;
     };
 };
 
