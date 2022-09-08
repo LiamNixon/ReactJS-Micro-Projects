@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <div class="headerWrapper">
+            <span>Version: 0.0.2</span>
+            <span>Lockshield Password Generator</span>
+            <span id="settingsButton" class="material-icons">settings</span>
+        </div>
+        <div id="mainPage">
+            <div class="textWrapper">
+                <h1 id="passwordField">* * *</h1>
+                <button class="button" id="generateButton">Generate</button>
+                <button class="button" id="saveButton">Save</button>
+            </div>
+        </div>
+        <div id="settingsPage">
+            <div class="textWrapper">
+                <h2>Settings</h2>
+                <div class="settingsWrapper">
+                    <div class="setting">
+                        <span>No. of characters:</span>
+                        <input class="textInput" type="number">
+                    </div>
+                    <div class="setting">
+                        <span>Upper and Lowercase?</span>
+                        <input type="checkbox">
+                    </div>
+                    <div class="setting">
+                        <span>Numbers?</span>
+                        <input type="checkbox">
+                    </div>
+                    <div class="setting">
+                        <span>Special Characters?</span>
+                        <input type="checkbox">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
