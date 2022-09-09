@@ -1,6 +1,6 @@
 {
     "name": "Lockshield Password Generator",
-    "version": "0.1.1",
+    "version": "0.2.0",
     "description": "A customiseable password generator to create everything from PIN's to secure, unique passwords!",
     "manifest_version": 3,
     "action": {
@@ -10,6 +10,6 @@
     "icons": {
         "128":"Lockshield Icon.png"
     },
-    "permissions": ["activeTab"]
+    "permissions": []
 
 }

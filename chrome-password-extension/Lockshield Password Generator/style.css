@@ -2,13 +2,14 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    -webkit-font-smoothing: antialiased;
 }
 
 .container {
     display: flex;
     flex-direction: column;
     width: 400px;
-    background-color: rgb(255,255,255);
+    background-color: #ffffff;
 }
 
 .textWrapper {
@@ -18,25 +19,32 @@
     gap: 0.25rem;
     justify-content: center;
     text-align: center;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: Roboto, Avenir, Helvetica, Arial, sans-serif;
 }
 
 .headerWrapper {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
-    border: 1px;
-    border-bottom-style: solid;
-    border-color: #757575;
-    font-family: 'Helvetica Neue', Helvetica, sans-serif;
+    font-family: Roboto, Avenir, Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    background-color: #B63829;
+    color: #ffffff;
     
+}
+
+.headerWrapper span {
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 .settingsWrapper {
     display: flex;
+    gap: 0.25rem;
     flex-direction: column;
     align-items: center;
+    padding-bottom: 1rem;
 }
 
 .setting {
@@ -47,41 +55,69 @@
 }
 
 .setting span {
-    font-family: 'Helvetica Neue', Helvetica, sans-serif;
+    color: #2C363F;
+    font-family: Roboto, Avenir, Helvetica, Arial, sans-serif;
+    font-weight: 600;
     width: 100%;
     text-align: start;
 }
 
 .textInput {
-    font-family: 'Helvetica Neue', Helvetica, sans-serif;
-    width: 50%;
+    font-family: Roboto, Avenir, Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    width: 30%;
+}
+
+.wideInput {
+    font-family: Roboto, Avenir, Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    width: 66%;
 }
 
 .button {
     border: 1px;
+    border-radius: 0.5rem;
     border-style: solid;
-    border-color: #757575;
-    padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+    border-color: #2C363F;
+    padding: 0.5rem 0.75rem;
     margin-bottom: 0.5rem;
     position: relative;
     margin-left: auto;
     margin-right: auto;
     cursor: pointer;
-    background-color: rgb(240,240,240);
-    font-family: 'Helvetica Neue', Helvetica, sans-serif;
+    background-color: #ffffff;
+    color: #2C363F;
+    font-family: Roboto, Avenir, Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
     transition: all 0.1s ease-in;
+    --tw-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 .button:hover {
-    border-color: #32bee9;
+    border-color: #B63829;
+    background-color: #B63829;
+    color: #ffffff;
+    --tw-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+    transform: translateY(-0.125rem);
+}
+
+.spacer {
+    padding-top: 0.125rem;
+    padding-bottom: 0.125rem;
+}
+
+#passwordField {
+    font-size: 2em;
 }
 
 #settingsButton {
     align-self: end;
     cursor: pointer;
     padding: 0.25rem;
-    color: #757575;
-    
+    color: #ffffff;
     vertical-align: bottom;
 }
 
@@ -96,6 +132,7 @@
 #mainPage {
     display: flex;
     justify-content: center;
+    padding-bottom: 1rem;
 }
 
 #settingsPage {
@@ -103,9 +140,38 @@
     justify-content: center;
 }
 
-h1, h2 {
-    color: #505050;
-    padding-top: 1rem;
+#version {
+    font-family: Roboto, Avenir, Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    font-size: 0.75rem;
+    background-color: #B63829;
+    color: #ffffff;
+    padding-top: 0.5rem;
     padding-bottom: 0.5rem;
-    font-family: 'Helvetica Neue', Helvetica, sans-serif;
+    margin-bottom: 0;
+}
+
+h1, h2 {
+    color: #2C363F;
+    padding-top: 1rem;
+    padding-bottom: 0.25rem;
+    font-family: Roboto, Avenir, Helvetica, Arial, sans-serif;
+}
+
+h3 {
+    color: #2C363F;
+    font-family: Roboto, Avenir, Helvetica, Arial, sans-serif;
+    font-size: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+h4 {
+    color: #B63829;
+    font-family: Roboto, Avenir, Helvetica, Arial, sans-serif;
+    font-size: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    user-select: none;
+    cursor: pointer;
 }

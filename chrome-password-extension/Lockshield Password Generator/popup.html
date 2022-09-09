@@ -10,13 +10,13 @@
 <body>
     <div class="container">
         <div class="headerWrapper">
-            <span>Version: 0.1.1</span>
             <span>Lockshield Password Generator</span>
             <span id="settingsButton" class="material-icons">settings</span>
         </div>
         <div id="mainPage">
             <div class="textWrapper">
                 <h1 id="passwordField">* * *</h1>
+                <div class="spacer"></div>
                 <button class="button" id="generateButton">Generate</button>
                 <button class="button" id="saveButton">Copy</button>
             </div>
@@ -30,7 +30,7 @@
                         <input id="lengthField" class="textInput" type="number">
                     </div>
                     <div class="setting">
-                        <span>Upper and Lowercase?</span>
+                        <span>Uppercase and lowercase?</span>
                         <input id="mixToggle" type="checkbox">
                     </div>
                     <div class="setting">
@@ -38,7 +38,7 @@
                         <input id="numberToggle" type="checkbox">
                     </div>
                     <div class="setting">
-                        <span>Special Characters?</span>
+                        <span>Special characters?</span>
                         <input id="specialToggle" type="checkbox">
                     </div>
                     <div class="setting">
@@ -50,6 +50,23 @@
                         <input id="pinToggle" type="checkbox">
                     </div>
                 </div>
+                <h3>Advanced Settings</h3>
+                <div class="settingsWrapper">
+                    <div class="setting">
+                        <span>Unwanted characters:</span>
+                        <input id="blacklistField" class="wideInput" type="text">
+                    </div>
+                    <div class="setting">
+                        <span>Prefix:</span>
+                        <input id="prefixField" class="wideInput" type="text">
+                    </div>
+                    <div class="setting">
+                        <span>Suffix:</span>
+                        <input id="suffixField" class="wideInput" type="text">
+                    </div>
+                </div>
+                <h4 id="resetButton">Reset Settings</h4>
+                <span id="version">Version: 0.2.0</span>
             </div>
         </div>
     </div>
