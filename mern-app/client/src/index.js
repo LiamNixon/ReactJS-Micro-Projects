@@ -4,7 +4,8 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 // CSS
-import './css/index.css';
+import './css/Index.css';
+import './css/GlobalStyles.css';
 
 // Components./components/functions/NewUserPage
 import LoginPage from './pages/LoginPage';

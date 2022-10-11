@@ -36,7 +36,7 @@ const NewUserPage = () => {
     };
 
     return (
-        <div>
+        <React.Fragment>
             <form className="flex flex-col justify-center items-center">
                 <div>
                     <p>Choose Username:</p>
@@ -48,7 +48,7 @@ const NewUserPage = () => {
                 </div>
                 <button onClick={handleSubmit}>Submit</button>
             </form>
-        </div>
+        </React.Fragment>
     );
 };
 
