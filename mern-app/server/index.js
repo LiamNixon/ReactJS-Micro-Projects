@@ -3,6 +3,7 @@ const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
+const bcrypt = require('bcrypt');
 
 // Process .env file
 dotenv.config({path:'./config.env'});
@@ -32,10 +33,16 @@ mongoose.connect(DB, {
 // Define HTTP routes
 const User = require('./model/Users');
 
-// POST method
-app.post('/add-user', async(req,res) => {
+// POST method (Create new user)
+app.post('/api/add-user', async(req,res) => {
+    let { username, password } = req.body;
+    // Hash password
+    const hashPassword = bcrypt.hashSync(password, 10);
     // Creates a new user object from submitted body content
-    const newUser = new User(req.body);
+    const newUser = new User({
+        username: username,
+        password: hashPassword
+    });
     try {
         // Save new record of user to database
         await newUser.save();
@@ -55,8 +62,49 @@ app.post('/add-user', async(req,res) => {
     };
 });
 
+// Check existing username
+app.post('/api/new-user', async(req,res) => {
+    await User.findOne(req.body)
+    .then(user => {
+        if(!user) {
+            return res.status(200).json({
+                status: 'Username available'
+            });
+        } else {
+            return res.status(409).json({
+                error: 'Username already taken'
+            });
+        };
+    });
+});
+
+// Authenticate method
+app.post('/api/auth', async(req,res) => {
+    let { username, password } = req.body;
+    
+    await User.findOne({username})
+    .then(user => {
+        if(!user) {
+            return res.status(404).json({
+                error: 'User not found'
+            });
+        } else {
+            const validPassword = bcrypt.compareSync(password, user.password);
+            if (validPassword) {
+                return res.status(200).json({
+                    status: 'Successful'
+                });
+            } else {
+                return res.status(401).json({
+                    error: 'Incorrect password'
+                });
+            };
+        };
+    });
+});
+
 // PATCH method
-app.patch('/update-user/:id', async (req,res) => {
+app.patch('/api/update-user/:id', async (req,res) => {
     const updatedUser = await User.findByIdAndUpdate(req.params.id,req.body,{
         new: true,
         runValidators: true
@@ -77,7 +125,7 @@ app.patch('/update-user/:id', async (req,res) => {
 });
 
 // GET all method
-app.get('/get-users', async(req,res) => {
+app.get('/api/get-users', async(req,res) => {
     // Create a list of ALL users in database
     const users = await User.find({});
     try {
@@ -98,7 +146,7 @@ app.get('/get-users', async(req,res) => {
 });
 
 // GET single method
-app.get('/get-user/:id', async(req,res) => {
+app.get('/api/get-user/:id', async(req,res) => {
     const user = await User.findById(req.params.id);
     try {
         res.status(200).json({
@@ -116,7 +164,7 @@ app.get('/get-user/:id', async(req,res) => {
 });
 
 // DELETE method
-app.delete('/delete-user/:id', async(req,res) => {
+app.delete('/api/delete-user/:id', async(req,res) => {
     await User.findByIdAndDelete(req.params.id);
     try {
         res.status(204).json({
